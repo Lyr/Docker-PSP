@@ -42,3 +42,5 @@ RUN         make
 RUN         make install
 
 WORKDIR     /home/container
+
+CMD         ['/bin/bash']
