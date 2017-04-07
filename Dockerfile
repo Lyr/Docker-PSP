@@ -4,7 +4,6 @@
 # MIT Licensed
 ##
 FROM ubuntu:14.04
-SHELL ["/bin/bash", "-c"]
 
 MAINTAINER  Belldandu, <kami@ilp.moe>
 ENV         DEBIAN_FRONTEND noninteractive
@@ -25,6 +24,8 @@ ENV         HOME /home/container
 
 WORKDIR     /home/container
 
+SHELL       ["/bin/bash", "-c"]
+
 RUN         mkdir /home/container/pspdev
 ENV         PSPDEV /home/container/pspdev
 ENV         PATH "${PATH}:$PSPDEV/bin"
@@ -44,4 +45,6 @@ RUN         make install
 
 WORKDIR     /home/container
 
-CMD         ['/bin/bash']
+COPY        ./start.sh /start.sh
+
+CMD         ["/bin/bash", "/start.sh"]
