@@ -4,6 +4,7 @@
 # MIT Licensed
 ##
 FROM ubuntu:14.04
+SHELL ["/bin/bash", "-c"]
 
 MAINTAINER  Belldandu, <kami@ilp.moe>
 ENV         DEBIAN_FRONTEND noninteractive
