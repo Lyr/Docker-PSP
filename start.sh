@@ -22,11 +22,12 @@ if [ ! -d "${PSPDEV}/bin" ]; then
 	./toolchain.sh
 	echo ":/home/container/psptoolchain$ cd .."
 	cd ..
+	echo "The PSP toolchain is now installed (the sdk is part of the toolchain)."
+
 else
 	echo "PSP toolchain already installed (sdk is included in toolchain)"
 fi
 
-echo "The PSP toolchain is now installed (the sdk is part of the toolchain)."
 echo "Make sure to read the readme at https://github.com/belldandu/Docker-PSP/blob/master/README.md so that you know how to properly start this image."
 
 if [ $? -ne 0 ]; then
