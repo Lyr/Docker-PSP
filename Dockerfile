@@ -24,15 +24,13 @@ ENV         HOME /home/container
 
 WORKDIR     /home/container
 
-SHELL       ["/bin/bash", "-c"]
-
 RUN         mkdir /home/container/pspdev
 ENV         PSPDEV /home/container/pspdev
 ENV         PATH "${PATH}:$PSPDEV/bin"
 
 RUN         git clone https://github.com/pspdev/psptoolchain.git
 WORKDIR     /home/container/psptoolchain
-RUN         /bin/bash toolchain.sh
+CMD         ["/bin/bash", "toolchain.sh"]
 
 WORKDIR     /home/container
 
