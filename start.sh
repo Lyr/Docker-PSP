@@ -14,6 +14,8 @@ if [ ! -d "${PSPDEV}/bin" ]; then
 	echo ":/home/container$ rm -rf ${PSPDEV}/*"
 	rm -rf $PSPDEV/*
 	echo "So grab a soda or something and enjoy the ride, or play a video game, or whatever you do when waiting."
+	echo ":/home/container$ git clone https://github.com/pspdev/psptoolchain.git"
+	git clone https://github.com/pspdev/psptoolchain.git
 	sleep 3
 	# Build psp toolchain (sdk is included in toolchain)
 	echo ":/home/container$ cd psptoolchain"
@@ -29,12 +31,6 @@ else
 fi
 
 echo "Make sure to read the readme at https://github.com/belldandu/Docker-PSP/blob/master/README.md so that you know how to properly start this image."
-
-if [ $? -ne 0 ]; then
-    echo "CONTAINER_ERR: There was an error while attempting to run the start command."
-    exit 1
-fi
-
 echo "Please type exit once you wish to stop the container."
 echo ":/home/container$ /bin/bash"
 /bin/bash

@@ -55,8 +55,8 @@ ENV         GIT_ALLOW_PROTOCOL https
 # The PSPSDK is part of the toolchain
 RUN         mkdir /home/container/pspdev
 ENV         PSPDEV /home/container/pspdev
-ENV         PATH "${PATH}:$PSPDEV/bin"
-RUN         git clone https://github.com/pspdev/psptoolchain.git
+ENV         PSPSDK $PSPDEV/psp/sdk
+ENV         PATH "${PATH}:$PSPDEV/bin:$PSPSDK/bin"
 
 COPY        ./start.sh /start.sh
 
