@@ -9,8 +9,8 @@ if [ "$(pwd)" -ne "/home/container" ]; then
 	cd /home/container
 fi
 
-echo ":/home/container$ ls $PSPDEV"
-ls $PSPDEV
+echo ":/home/container$ /bin/bash"
+/bin/bash
 
 if [ $? -ne 0 ]; then
     echo "PTDL_CONTAINER_ERR: There was an error while attempting to run the start command."
