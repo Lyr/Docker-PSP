@@ -12,7 +12,7 @@ When it's done it will start a bash session for which you can do whatever in but
 
 ## Running any time after the first time
 ```
-docker start psp -a
+docker start psp -i
 ```
 Docker will start `/start.sh` again in the container but thanks to checks in place it will only start a bash session for you which you will be attached to.
 
