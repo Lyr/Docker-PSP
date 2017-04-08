@@ -24,6 +24,8 @@ if [ ! -d "${PSPDEV}/bin" ]; then
 	./toolchain.sh
 	echo ":/home/container/psptoolchain$ cd .."
 	cd ..
+	echo ":/home/container$ rm -rf psptoolchain"
+	rm -rf psptoolchain
 	echo "The PSP toolchain is now installed (the sdk is part of the toolchain)."
 
 else
