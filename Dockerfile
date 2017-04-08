@@ -49,11 +49,13 @@ ENV         HOME /home/container
 
 WORKDIR     /home/container
 
+# Only allow git to clone over https
+ENV         GIT_ALLOW_PROTOCOL https
+
+# The PSPSDK is part of the toolchain
 RUN         mkdir /home/container/pspdev
 ENV         PSPDEV /home/container/pspdev
 ENV         PATH "${PATH}:$PSPDEV/bin"
-
-# The PSPSDK is part of the toolchain
 RUN         git clone https://github.com/pspdev/psptoolchain.git
 
 COPY        ./start.sh /start.sh
