@@ -3,7 +3,7 @@
 #
 # MIT Licensed
 ##
-FROM ubuntu:14.04
+FROM debian:7.11
 
 MAINTAINER  Belldandu, <kami@ilp.moe>
 ENV         DEBIAN_FRONTEND noninteractive
@@ -11,6 +11,7 @@ ENV         DEBIAN_FRONTEND noninteractive
 # Install Dependencies
 # libtool-bin is a part of libtool as of the latest version of ubuntu
 RUN         apt-get update && apt-get install -y \
+	make \
 	g++ \
 	build-essential \
 	autoconf \
@@ -53,7 +54,6 @@ WORKDIR     /home/container
 ENV         GIT_ALLOW_PROTOCOL https
 
 # The PSPSDK is part of the toolchain
-RUN         mkdir /home/container/pspdev
 ENV         PSPDEV /home/container/pspdev
 ENV         PSPSDK $PSPDEV/psp/sdk
 ENV         PATH "${PATH}:$PSPDEV/bin:$PSPSDK/bin"
